@@ -1,6 +1,8 @@
 """Console script for research_project_1."""
 
 import argparse
+
+
 def main():
     """Console script for research_project_1."""
     parser = argparse.ArgumentParser(
