@@ -15,7 +15,8 @@ execute:
 repository:
   url: https://github.com/jorgensd/research_project_1 # Online location of your book
   branch: main
-    
+  path_to_book: docs
+
 html:
   use_issues_button: true
   use_repository_button: true
