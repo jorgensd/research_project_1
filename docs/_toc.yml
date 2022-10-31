@@ -5,3 +5,4 @@ parts:
   - caption: Python API
     chapters:
     - file: "api"
+    - file: "mwe"
