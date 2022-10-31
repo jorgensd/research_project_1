@@ -2,4 +2,4 @@
 
 __author__ = """Jørgen S. Dokken"""
 __email__ = 'dokken@simula.no'
-__version__ = '0.1.0'
+__version__ = '0.1.5'
