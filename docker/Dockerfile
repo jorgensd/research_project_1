@@ -21,7 +21,7 @@ WORKDIR /tmp/
 
 # Install the Python-module
 RUN git clone --branch ${REPO_BRANCH} --single-branch https://github.com/jorgensd/research_project_1
-RUN python3 -m pip install .[all]research_project_1
+RUN python3 -m pip install research_project_1[all]
 
 
 # We remove the contents of the temporary directory to minimize the size of the image
