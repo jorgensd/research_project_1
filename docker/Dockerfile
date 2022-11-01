@@ -1,20 +1,19 @@
+# We choose ubuntu 22.04 as our base docker image
+FROM ubuntu:22.04
+
+# Modifiable argument that can be pased in through command line
 ARG REPO_BRANCH="main"
 
-# We choose ubuntu 22.04 as our base docker image
-FROM ubuntu:22.04 as base 
-
-# Expose arg
-ARG REPO_BRANCH
+# Environment variable for correct usage of setuptools on ubuntu 22.04, see
+# https://github.com/pypa/setuptools/issues/3269#issuecomment-1254507377
+ENV DEB_PYTHON_INSTALL_LAYOUT=deb_system
 
 # Install pip and git with apt
 RUN apt-get update && \
     apt-get install -y python3-pip git
 
 # We upgrade pip and setuptools
-# We remove the version of setuptools install via apt, as it is outdated
 RUN python3 -m pip install pip setuptools --upgrade
-RUN apt-get purge -y python3-setuptools
-
 
 # We set the working directory to install docker dependencies
 WORKDIR /tmp/
